@@ -38,6 +38,15 @@ addTaskButton.addEventListener("click",function(e){
         newTask.classList.add("task")
         newTask.setAttribute("draggable","true")
         newTask.innerText=value;
+        const btn=document.createElement("button")
+        btn.classList.add("btnDelete")
+        btn.innerText="Delete"
+        btn.addEventListener("click",function(e){
+            e.preventDefault()
+            newTask.remove()
+
+        })
+        newTask.appendChild(btn)
         newTask.addEventListener("dragstart",function(e){
             newTask.classList.add("dragStyle")
         })
@@ -48,4 +57,10 @@ addTaskButton.addEventListener("click",function(e){
         input.value=""
 
     
+})
+document.querySelectorAll(".btnDelete").forEach(btn=>{
+    btn.addEventListener("click",function(e){
+        e.preventDefault()
+        this.parentEelement.remove()
+    })
 })

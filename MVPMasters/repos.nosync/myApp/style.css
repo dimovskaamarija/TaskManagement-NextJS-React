@@ -37,7 +37,15 @@ h1 {
     background-color: #ecf0f1;
     color: #2c3e50;
 }
-
+.btnDelete{
+    padding: 7px 9px;
+    border: none;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #f5b520;
+    color: #ecf0f1;
+}
 
 
 .containers {
@@ -55,7 +63,7 @@ h1 {
     background-color: #ecf0f1; 
     padding: 14px;
     border-radius: 8px;
-    width: 240px;
+    width: 340px;
 
 }
 
@@ -73,6 +81,7 @@ h1 {
     padding: 10px;
     margin: 5px 0;
     border-radius: 5px;
+   
 
 }
 #add {
