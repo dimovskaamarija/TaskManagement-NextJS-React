@@ -15,6 +15,7 @@ export default function SignUpComponent() {
 
   return (
     <form onSubmit={handleSignUp}>
+      <h1>Sign Up</h1>
       <input
         type="email"
         placeholder="Email"

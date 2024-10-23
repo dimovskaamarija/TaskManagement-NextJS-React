@@ -5,5 +5,6 @@ export default function SignOutComponent() {
   const handleSignOut = async (e: FormEvent) => {
     await signOutUser();
   };
+
   return <button onClick={handleSignOut}>Sign Out</button>;
 }

@@ -1,4 +1,4 @@
-import { collection, query, where , getDocs, getDoc, deleteDoc, doc, addDoc} from "firebase/firestore"
+import { collection, query, where , getDocs, getDoc, deleteDoc, doc, addDoc,updateDoc} from "firebase/firestore"
 import {db} from "./FirebaseConfig"
 export interface Task {
     id: string;
@@ -8,7 +8,8 @@ export interface Task {
  export interface TaskList{
     todo:Task[],
     inProgress:Task[],
-    done:Task[]
+    done:Task[],
+    [key: string]: Task[];
   }
 
 export async function loadContent(userId:string) {
@@ -56,3 +57,14 @@ export async function addNewTask(taskValue:string, userId:string) {
     }
 
 }
+
+export const updateTaskCollection = async (taskId: string, newCollection: string, task: Task) => {
+    try {
+        await addDoc(collection(db, newCollection), {
+            task: task.task,
+            userId: task.userId,
+        });
+    } catch (error) {
+        console.error("Error updating task collection: ", error);
+    }
+};
